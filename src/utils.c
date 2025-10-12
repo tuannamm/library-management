@@ -33,3 +33,12 @@ int read_int(const char* prompt, int min_val, int max_val) {
         };
     }
 }
+
+
+// function: Bấm enter to continue, bỏ qua mọi thứ mọi người nhập cho đến khi nhập "enter"
+void press_enter_to_continue() {
+    printf("Bam Enter de tiep tuc");
+    fflush(stdout);
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF) {} // 
+}

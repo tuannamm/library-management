@@ -9,5 +9,8 @@
 // return: số nguyên đọc được
 int read_int(const char* prompt, int min_val, int max_val);
 
+// function: Bấm enter to continue, bỏ qua mọi thứ mọi người nhập cho đến khi nhập "enter"
+void press_enter_to_continue();
+
 
 #endif

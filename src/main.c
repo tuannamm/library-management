@@ -13,22 +13,22 @@ int main() {
         printf("0. Thoat\n");
         int c = read_int("Chon : ", 0, 5);
         if (c == 0) return 0;
-        switch(c) {
-            case 1: 
-                printf("Chon option 1\n");
-                return 0;
-            case 2: 
-                printf("Chon option 2\n");
-                return 0;
-            case 3: 
-                printf("Chon option 3\n");
-                return 0;
-            case 4: 
-                printf("Chon option 4\n");
-                return 0;
-            case 5: 
-                printf("Chon option 5\n");
-                return 0;
+        if (c == 1) {
+            printf("Chon option 1\n");
         }
+        if (c == 2) {
+            printf("Chon option 2\n");
+        }
+        if (c == 3) {
+            printf("Chon option 3\n");
+        }
+        if (c == 4) {
+            printf("Chon option 4\n");
+        }
+        if (c == 5) {
+            printf("Chon option 5\n");
+        }
+        press_enter_to_continue();
     }
+    return 0;
 }
