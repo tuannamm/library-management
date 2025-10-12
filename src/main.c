@@ -1,6 +1,71 @@
 #include "utils.h"
 #include <stdio.h>
 
+static void menu_reader() {
+    while(1) {
+        printf("\n=== QUAN LY DOC GIA ===\n");
+        printf("1. Xem danh sach doc gia\n");
+        printf("2. Them doc gia\n");
+        printf("3. Chinh sua doc gia\n");
+        printf("4. Xoa doc gia\n");
+        printf("5. Tim theo CMND\n");
+        printf("6. Tim theo Ho ten\n");
+        printf("0. Quay lai\n");
+
+        int c = read_int("Chon: ", 0, 6);
+        if (c == 1) printf("READER: option 1");
+        if (c == 2) printf("READER: option 2");
+        if (c == 3) printf("READER: option 3");
+        if (c == 4) printf("READER: option 4");
+        if (c == 5) printf("READER: option 5");
+        if (c == 6) printf("READER: option 6");
+        if (c == 0) return;
+    }
+}
+
+static void menu_book() {
+        printf("\n=== QUAN LY SACH ===\n");
+        printf("1. Xem danh sach sach\n");
+        printf("2. Them sach\n");
+        printf("3. Chinh sua sach\n");
+        printf("4. Xoa sach\n");
+        printf("5. Tim theo ISBN\n");
+        printf("6. Tim theo Ten sach\n");
+        printf("0. Quay lai\n");
+
+        int c = read_int("Chon: ", 0, 6);
+        if (c == 1) printf("BOOK: option 1");
+        if (c == 2) printf("BOOK: option 2");
+        if (c == 3) printf("BOOK: option 3");
+        if (c == 4) printf("BOOK: option 4");
+        if (c == 5) printf("BOOK: option 5");
+        if (c == 6) printf("BOOK: option 6");
+        if (c == 0) return;
+
+}
+
+static void menu_stats() {
+        printf("\n=== Thong ke ===\n");
+        printf("1. Tong so luong sach\n");
+        printf("2. Thong ke so luong sach theo the loai\n");
+        printf("3. Tong so luong doc gia\n");
+        printf("4. Thong ke doc gia theo gioi tinh\n");
+        printf("5. Thong ke so sach dang duoc muon\n");
+        printf("6. Danh sach doc gia bi tre han\n");
+        printf("0. Quay lai\n");
+
+        int c = read_int("Chon: ", 0, 6);
+        if (c == 1) printf("STATS: option 1");
+        if (c == 2) printf("STATS: option 2");
+        if (c == 3) printf("STATS: option 3");
+        if (c == 4) printf("STATS: option 4");
+        if (c == 5) printf("STATS: option 5");
+        if (c == 6) printf("STATS: option 6");
+        if (c == 0) return;
+}
+
+
+
 int main() {
     // TODO: init data
     while(1) {
@@ -11,23 +76,15 @@ int main() {
         printf("4. Lap phieu tra sach\n");
         printf("5. Cac thong ke co ban\n");
         printf("0. Thoat\n");
+
         int c = read_int("Chon : ", 0, 5);
+        if (c == 1) menu_reader();
+        if (c == 2) menu_book();
+        if (c == 3) printf("Chon option 3\n");        
+        if (c == 4) printf("Chon option 4\n");
+        if (c == 5) menu_stats();
         if (c == 0) return 0;
-        if (c == 1) {
-            printf("Chon option 1\n");
-        }
-        if (c == 2) {
-            printf("Chon option 2\n");
-        }
-        if (c == 3) {
-            printf("Chon option 3\n");
-        }
-        if (c == 4) {
-            printf("Chon option 4\n");
-        }
-        if (c == 5) {
-            printf("Chon option 5\n");
-        }
+
         press_enter_to_continue();
     }
     return 0;
