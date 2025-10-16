@@ -10,7 +10,17 @@ void get_list_sach();
 // function in sách theo hàng
 void print_sach_theo_hang(int i);
 
-// function thêm sách 
+// function thêm sách vào thư viện
+int them_sach();
 
+// function tìm sách được thêm thư viện bằng ISBN
+// params: char* isbn
+// return: 0 nếu chưa tồn tại, 1 nếu đã tồn tại
+int tim_sach_bang_ISBN(const char* isbn); 
+
+// function validate sách bằng ISBN
+// params: char* isbn
+// return 0 nếu chưa tồn tại, 1 nếu đã tồn tại
+int validate_sach_by_isbn(const char* isbn);
 
 #endif
