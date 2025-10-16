@@ -69,7 +69,7 @@ static void menu_stats() {
 
 
 int main() {
-    // TODO: init data
+    khoi_tao_du_lieu();
     while(1) {
         printf("\n===== QUAN LI THU VIEN =====\n");
         printf("1. Quan li doc gia\n");
