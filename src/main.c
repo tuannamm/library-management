@@ -1,5 +1,7 @@
-#include "utils.h"
 #include <stdio.h>
+
+#include "utils.h"
+#include "book.h"
 
 static void menu_reader() {
     while(1) {
@@ -30,11 +32,11 @@ static void menu_book() {
         printf("3. Chinh sua sach\n");
         printf("4. Xoa sach\n");
         printf("5. Tim theo ISBN\n");
-        printf("6. Tim theo Ten sach\n");
+        printf("6. Tim theo ten sach\n");
         printf("0. Quay lai\n");
 
         int c = read_int("Chon: ", 0, 6);
-        if (c == 1) printf("BOOK: option 1");
+        if (c == 1) get_list_sach();
         if (c == 2) printf("BOOK: option 2");
         if (c == 3) printf("BOOK: option 3");
         if (c == 4) printf("BOOK: option 4");
@@ -45,7 +47,7 @@ static void menu_book() {
 }
 
 static void menu_stats() {
-        printf("\n=== Thong ke ===\n");
+        printf("\n=== THONG KE ===\n");
         printf("1. Tong so luong sach\n");
         printf("2. Thong ke so luong sach theo the loai\n");
         printf("3. Tong so luong doc gia\n");
