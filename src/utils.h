@@ -14,6 +14,11 @@ int nhap_so_nguyen(const char* prompt, int min_val, int max_val);
 // return: none
 void nhap_chuoi(const char* promp, char* buf, int max_len);
 
+// function lưu dữ liệu vào vùng nhớ
+// params: dest - địa chỉ vùng nhớ, source: dữ liệu
+// return: none
+void luu_du_lieu_vao_vung_nho(char* dest, const char* source);
+
 // function: Bấm enter to continue, bỏ qua mọi thứ mọi người nhập cho đến khi nhập "enter"
 void press_enter_to_continue();
 

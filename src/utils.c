@@ -1,6 +1,7 @@
-#include "utils.h"
 #include <stdio.h>
+#include <string.h>
 
+#include "utils.h"
 
 // function đọc một số nguyên trong khoảng từ min_val đến max_val từ stdin với prompt và validation
 // params: prompt, min_val, max_val
@@ -46,6 +47,10 @@ void nhap_chuoi(const char* prompt, char* buf, int max_len) {
     // TODO: trim line
     size_t n = strlen(buf);
     if (n > 0 && buf[n-1] == '\r') buf[n-1] = '\0';
+}
+
+void luu_du_lieu_vao_vung_nho(char* dest, const char* source) {
+    strcpy(dest, source);
 }
 
 // function: Bấm enter to continue, bỏ qua mọi thứ mọi người nhập cho đến khi nhập "enter"
