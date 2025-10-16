@@ -5,7 +5,7 @@
 // function đọc một số nguyên trong khoảng từ min_val đến max_val từ stdin với prompt và validation
 // params: prompt, min_val, max_val
 // return: số nguyên đọc được
-int read_int(const char* prompt, int min_val, int max_val) {
+int nhap_so_nguyen(const char* prompt, int min_val, int max_val) {
     char line[128];
     int val;
     while (1) {
@@ -34,6 +34,19 @@ int read_int(const char* prompt, int min_val, int max_val) {
     }
 }
 
+
+void nhap_chuoi(const char* prompt, char* buf, int max_len) {
+    if (prompt && *prompt) {
+        printf("%s", prompt);
+    }
+    if (fgets(buf, max_len, stdin) == NULL) {
+        if (max_len > 0) buf[0] = '\0';
+        return;
+    }
+    // TODO: trim line
+    size_t n = strlen(buf);
+    if (n > 0 && buf[n-1] == '\r') buf[n-1] = '\0';
+}
 
 // function: Bấm enter to continue, bỏ qua mọi thứ mọi người nhập cho đến khi nhập "enter"
 void press_enter_to_continue() {

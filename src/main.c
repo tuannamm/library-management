@@ -14,7 +14,7 @@ static void menu_reader() {
         printf("6. Tim theo Ho ten\n");
         printf("0. Quay lai\n");
 
-        int c = read_int("Chon: ", 0, 6);
+        int c = nhap_so_nguyen("Chon: ", 0, 6);
         if (c == 1) printf("READER: option 1");
         if (c == 2) printf("READER: option 2");
         if (c == 3) printf("READER: option 3");
@@ -35,9 +35,9 @@ static void menu_book() {
         printf("6. Tim theo ten sach\n");
         printf("0. Quay lai\n");
 
-        int c = read_int("Chon: ", 0, 6);
+        int c = nhap_so_nguyen("Chon: ", 0, 6);
         if (c == 1) get_list_sach();
-        if (c == 2) printf("BOOK: option 2");
+        if (c == 2) them_sach();
         if (c == 3) printf("BOOK: option 3");
         if (c == 4) printf("BOOK: option 4");
         if (c == 5) printf("BOOK: option 5");
@@ -56,7 +56,7 @@ static void menu_stats() {
         printf("6. Danh sach doc gia bi tre han\n");
         printf("0. Quay lai\n");
 
-        int c = read_int("Chon: ", 0, 6);
+        int c = nhap_so_nguyen("Chon: ", 0, 6);
         if (c == 1) printf("STATS: option 1");
         if (c == 2) printf("STATS: option 2");
         if (c == 3) printf("STATS: option 3");
@@ -79,7 +79,7 @@ int main() {
         printf("5. Cac thong ke co ban\n");
         printf("0. Thoat\n");
 
-        int c = read_int("Chon : ", 0, 5);
+        int c = nhap_so_nguyen("Chon : ", 0, 5);
         if (c == 1) menu_reader();
         if (c == 2) menu_book();
         if (c == 3) printf("Chon option 3\n");        
