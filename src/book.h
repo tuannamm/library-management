@@ -16,6 +16,14 @@ int them_sach();
 // function xóa sách khỏi thư viện
 void xoa_sach();
 
+// function cập nhật thông tin sách
+void cap_nhat_sach();
+
+// function cập nhật số lượng sách còn lại khi cập nhật tổng số lượng sách
+// params: int index của sách
+// return: none
+void cap_nhat_so_luong_sach_co_san(int index);
+
 // function tìm sách được thêm thư viện bằng ISBN
 // params: char* isbn
 // return: 0 nếu chưa tồn tại, 1 nếu đã tồn tại

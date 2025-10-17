@@ -101,6 +101,54 @@ void xoa_sach() {
 
 } 
 
+void cap_nhat_sach() {
+    char isbn[LENGTH_ISBN];
+    nhap_chuoi("Nhap ISBN can cap nhat: ", isbn, LENGTH_ISBN);
+    int index_cua_sach = tim_sach_bang_ISBN(isbn);
+    if (index_cua_sach == -1) {
+        printf("Khong tim thay sach voi ISBN.\n");
+        return;
+    }
+    print_sach_theo_hang(index_cua_sach);
+    printf("Chon option de update: \n1.Ten tieu de\n2.Tac gia\n3.Nha xuat ban\n4.Nam xuat ban\n5.The loai\n6.Gia\n7.So luong\n");
+    int option = nhap_so_nguyen("Lua chon cua ban: ", 1, 7);
+
+    if (option == 1) {
+        char tieu_de_moi[LENGTH_TIEU_DE];
+        nhap_chuoi("Tieu de moi: ", tieu_de_moi, LENGTH_TIEU_DE );
+        luu_du_lieu_vao_vung_nho(tieu_de_sach_at(index_cua_sach), tieu_de_moi);
+    }
+    if (option == 2) {
+        char tac_gia_moi[LENGTH_TAC_GIA];
+        nhap_chuoi("Tac gia moi: ", tac_gia_moi, LENGTH_TAC_GIA);
+        luu_du_lieu_vao_vung_nho(tac_gia_sach_at(index_cua_sach), tac_gia_moi);
+    }
+    if (option == 3) {
+        char nxb_moi[LENGTH_NXB];
+        nhap_chuoi("Nha xuat ban moi: ", nxb_moi, LENGTH_NXB);
+        luu_du_lieu_vao_vung_nho(nxb_sach_at(index_cua_sach), nxb_moi);
+    }
+    if (option == 4) {
+        char nam_xuat_ban_moi[LENGTH_NXB];
+        nhap_chuoi("Nam xuat ban moi: ", nam_xuat_ban_moi, LENGTH_NXB);
+    }
+    if (option == 5) {
+        char the_loai_moi[LENGTH_THE_LOAI];
+        nhap_chuoi("The loai moi: ", the_loai_moi, LENGTH_THE_LOAI);
+        luu_du_lieu_vao_vung_nho(the_loai_sach_at(index_cua_sach), the_loai_moi);
+    }
+    if (option == 6) {
+        int gia_moi = nhap_so_nguyen("Gia moi: ", 0, 999999999);
+        g_sach_gia[index_cua_sach] = gia_moi;
+    }
+    if (option == 7) {
+        int so_luong_moi = nhap_so_nguyen("So luong moi: ", 0, 99999999);
+        g_sach_ban_sao[index_cua_sach] = so_luong_moi;
+        cap_nhat_so_luong_sach_co_san(index_cua_sach);
+    }
+    printf("\nDa cap nhat sach isbn %s thanh cong\n\n", isbn);
+}
+
 int tim_sach_bang_ISBN(const char* isbn) {
     int i;
     for (i = 0; i < tong_so_luong_sach; i++) {
@@ -122,4 +170,12 @@ int validate_sach_by_isbn(const char* isbn) {
         return 0;
     }
     return 1;
+}
+
+void cap_nhat_so_luong_sach_co_san(int index) {
+    int tong_so_luong_sach_hien_tai = g_sach_ban_sao[index];
+    int tong_so_luong_sach_co_san_hien_tai = g_sach_ban_sao_co_san[index];
+
+    int chenh_lech = tong_so_luong_sach_hien_tai - tong_so_luong_sach_co_san_hien_tai;
+    g_sach_ban_sao_co_san[index] = chenh_lech;
 }
