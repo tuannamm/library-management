@@ -89,19 +89,19 @@ void xoa_sach() {
         luu_du_lieu_vao_vung_nho(isbn_sach_at(index_moi), isbn_sach_at(i));
         luu_du_lieu_vao_vung_nho(tieu_de_sach_at(index_moi), tieu_de_sach_at(i));
         luu_du_lieu_vao_vung_nho(tac_gia_sach_at(index_moi), tac_gia_sach_at(i));
-        luu_du_lieu_vao_vung_nho(nxb_sach_at(index_moi), tac_gia_sach_at(i));
+        luu_du_lieu_vao_vung_nho(nxb_sach_at(index_moi), nxb_sach_at(i));
         luu_du_lieu_vao_vung_nho(the_loai_sach_at(index_moi), the_loai_sach_at(i));
         g_sach_nam_xuat_ban[index_moi] = g_sach_nam_xuat_ban[i];
-        g_sach_gia[index_moi] = g_sach_nam_xuat_ban[i];
-        g_sach_ban_sao[index_moi] = g_sach_nam_xuat_ban[i];
-        g_sach_ban_sao_co_san[index_moi] = g_sach_nam_xuat_ban[i];
+        g_sach_gia[index_moi] = g_sach_gia[i];
+        g_sach_ban_sao[index_moi] = g_sach_ban_sao[i];
+        g_sach_ban_sao_co_san[index_moi] = g_sach_ban_sao_co_san[i];
     }
     tong_so_luong_sach--;
-    printf("Da xoa sach %s thanh cong", isbn);
+    printf("\nDa xoa sach isbn %s thanh cong\n\n", isbn);
 
 } 
 
-int tim_sach_bang_isbn(const char* isbn) {
+int tim_sach_bang_ISBN(const char* isbn) {
     int i;
     for (i = 0; i < tong_so_luong_sach; i++) {
         if (strcmp(isbn_sach_at(i), isbn) == 0) {
@@ -112,7 +112,7 @@ int tim_sach_bang_isbn(const char* isbn) {
 }
 
 int validate_sach_by_isbn(const char* isbn) {
-    int result = tim_sach_bang_isbn(isbn);
+    int result = tim_sach_bang_ISBN(isbn);
 
     if (result != -1) {
         printf("------------------------------\n");
