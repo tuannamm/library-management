@@ -2,6 +2,7 @@
     "files.associations": {
         "stdio.h": "c",
         "stddef.h": "c",
-        "book.h": "c"
+        "book.h": "c",
+        "reader.h": "c"
     }
 }

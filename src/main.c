@@ -7,7 +7,7 @@
 #include "reader.h"
 #include "reader.data.h"
 
-static void menu_reader() {
+static void menu_quan_ly_doc_gia() {
     while(1) {
         printf("\n=== QUAN LY DOC GIA ===\n");
         printf("1. Xem danh sach doc gia\n");
@@ -20,7 +20,7 @@ static void menu_reader() {
 
         int c = nhap_so_nguyen("Chon: ", 0, 6);
         if (c == 1) get_danh_sach_doc_gia();
-        if (c == 2) printf("READER: option 2");
+        if (c == 2) them_doc_gia();
         if (c == 3) printf("READER: option 3");
         if (c == 4) printf("READER: option 4");
         if (c == 5) printf("READER: option 5");
@@ -29,7 +29,7 @@ static void menu_reader() {
     }
 }
 
-static void menu_book() {
+static void menu_quan_ly_sach() {
         printf("\n=== QUAN LY SACH ===\n");
         printf("1. Xem danh sach sach\n");
         printf("2. Them sach\n");
@@ -86,8 +86,8 @@ int main() {
         printf("0. Thoat\n");
 
         int c = nhap_so_nguyen("Chon : ", 0, 5);
-        if (c == 1) menu_reader();
-        if (c == 2) menu_book();
+        if (c == 1) menu_quan_ly_doc_gia();
+        if (c == 2) menu_quan_ly_sach();
         if (c == 3) printf("Chon option 3\n");        
         if (c == 4) printf("Chon option 4\n");
         if (c == 5) menu_stats();
