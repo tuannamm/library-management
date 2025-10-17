@@ -13,6 +13,9 @@ void print_sach_theo_hang(int i);
 // function thêm sách vào thư viện
 int them_sach();
 
+// function xóa sách khỏi thư viện
+void xoa_sach();
+
 // function tìm sách được thêm thư viện bằng ISBN
 // params: char* isbn
 // return: 0 nếu chưa tồn tại, 1 nếu đã tồn tại

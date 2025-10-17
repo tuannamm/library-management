@@ -39,7 +39,7 @@ static void menu_book() {
         if (c == 1) get_list_sach();
         if (c == 2) them_sach();
         if (c == 3) printf("BOOK: option 3");
-        if (c == 4) printf("BOOK: option 4");
+        if (c == 4) xoa_sach();
         if (c == 5) printf("BOOK: option 5");
         if (c == 6) printf("BOOK: option 6");
         if (c == 0) return;
