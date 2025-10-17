@@ -1,8 +1,11 @@
 #include <stdio.h>
 
 #include "utils.h"
+
 #include "book.h"
 #include "book.data.h"
+#include "reader.h"
+#include "reader.data.h"
 
 static void menu_reader() {
     while(1) {
@@ -16,7 +19,7 @@ static void menu_reader() {
         printf("0. Quay lai\n");
 
         int c = nhap_so_nguyen("Chon: ", 0, 6);
-        if (c == 1) printf("READER: option 1");
+        if (c == 1) get_danh_sach_doc_gia();
         if (c == 2) printf("READER: option 2");
         if (c == 3) printf("READER: option 3");
         if (c == 4) printf("READER: option 4");
@@ -70,7 +73,9 @@ static void menu_stats() {
 
 
 int main() {
-    khoi_tao_du_lieu();
+    khoi_tao_du_lieu_book();
+    khoi_tao_du_lieu_reader();
+
     while(1) {
         printf("\n===== QUAN LI THU VIEN =====\n");
         printf("1. Quan li doc gia\n");

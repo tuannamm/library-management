@@ -15,7 +15,7 @@ int  g_sach_gia[MAX_SO_LUONG_SACH];
 int  g_sach_ban_sao[MAX_SO_LUONG_SACH];
 int  g_sach_ban_sao_co_san[MAX_SO_LUONG_SACH];
 
-void khoi_tao_du_lieu() {
+void khoi_tao_du_lieu_book() {
     tong_so_luong_sach = 10;
     init_sample_data();
 };

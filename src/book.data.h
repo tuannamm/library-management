@@ -1,5 +1,5 @@
-#ifndef DATA_H
-#define DATA_H
+#ifndef BOOK_DATA_H
+#define BOOK_DATA_H
 
 
 #define MAX_SO_LUONG_SACH 1000
@@ -13,7 +13,7 @@
 
 extern int tong_so_luong_sach;
 
-void khoi_tao_du_lieu();
+void khoi_tao_du_lieu_book();
 void init_sample_data();
 
 char* isbn_sach_at(int i);

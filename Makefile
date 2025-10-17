@@ -1,7 +1,7 @@
 CC=gcc
 CFLAGS=-std=c99 -Wall -Wextra -O2
 INCLUDES=-Isrc
-SRCS=src/main.c src/utils.c src/book.c src/data.c
+SRCS=src/main.c src/utils.c src/book.c src/data.c src/reader.c src/reader.data.c
 OBJS=$(SRCS:.c=.o)
 TARGET=library_manager
 
