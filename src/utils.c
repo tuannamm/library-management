@@ -44,8 +44,10 @@ void nhap_chuoi(const char* prompt, char* buf, int max_len) {
         if (max_len > 0) buf[0] = '\0';
         return;
     }
-    // TODO: trim line
+    // Xóa ký tự xuống dòng (\n hoặc \r\n)
     size_t n = strlen(buf);
+    if (n > 0 && buf[n-1] == '\n') buf[n-1] = '\0';
+    n = strlen(buf);
     if (n > 0 && buf[n-1] == '\r') buf[n-1] = '\0';
 }
 
