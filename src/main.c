@@ -2,7 +2,7 @@
 
 #include "utils.h"
 #include "book.h"
-#include "data.h"
+#include "book.data.h"
 
 static void menu_reader() {
     while(1) {

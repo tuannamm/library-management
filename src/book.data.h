@@ -28,9 +28,9 @@ extern char g_sach_tieu_de[MAX_SO_LUONG_SACH * LENGTH_TIEU_DE];
 extern char g_sach_tac_gia[MAX_SO_LUONG_SACH * LENGTH_TAC_GIA];
 extern char g_sach_nxb[MAX_SO_LUONG_SACH * LENGTH_NXB];
 extern char g_sach_the_loai[MAX_SO_LUONG_SACH * LENGTH_THE_LOAI];
-extern int g_sach_nam_xuat_ban[MAX_SO_LUONG_SACH];
-extern int g_sach_gia[MAX_SO_LUONG_SACH];
-extern int g_sach_ban_sao[MAX_SO_LUONG_SACH];
-extern int g_sach_ban_sao_co_san[MAX_SO_LUONG_SACH];
+extern int  g_sach_nam_xuat_ban[MAX_SO_LUONG_SACH];
+extern int  g_sach_gia[MAX_SO_LUONG_SACH];
+extern int  g_sach_ban_sao[MAX_SO_LUONG_SACH];
+extern int  g_sach_ban_sao_co_san[MAX_SO_LUONG_SACH];
 
 #endif
