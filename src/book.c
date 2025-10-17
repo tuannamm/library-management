@@ -160,10 +160,31 @@ void tim_sach_theo_ISBN() {
     print_sach_theo_hang(index_cua_sach);
 }
 
+void tim_sach_theo_tieu_de() {
+    char tieu_de[LENGTH_TIEU_DE];
+    nhap_chuoi("Nhap tieu de sach can tim: ", tieu_de, LENGTH_TIEU_DE);
+    int index_cua_sach = tim_sach_bang_tieu_de(tieu_de);
+    if (index_cua_sach == -1) {
+        printf("Khong tim thay sach voi tieu de %s.\n", tieu_de);
+        return;
+    }
+    print_sach_theo_hang(index_cua_sach);
+}
+
 int tim_sach_bang_ISBN(const char* isbn) {
     int i;
     for (i = 0; i < tong_so_luong_sach; i++) {
         if (strcmp(isbn_sach_at(i), isbn) == 0) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+int tim_sach_bang_tieu_de(const char* tieu_de) {
+    int i;
+       for (i = 0; i < tong_so_luong_sach; i++) {
+        if (strcmp(tieu_de_sach_at(i), tieu_de) == 0) {
             return i;
         }
     }
