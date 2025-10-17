@@ -149,6 +149,17 @@ void cap_nhat_sach() {
     printf("\nDa cap nhat sach isbn %s thanh cong\n\n", isbn);
 }
 
+void tim_sach_theo_ISBN() {
+    char isbn[LENGTH_ISBN];
+    nhap_chuoi("Nhap ISBN can tim: ", isbn, LENGTH_ISBN);
+    int index_cua_sach = tim_sach_bang_ISBN(isbn);
+    if (index_cua_sach == -1) {
+        printf("Khong tim thay sach voi ISBN.\n");
+        return;
+    }
+    print_sach_theo_hang(index_cua_sach);
+}
+
 int tim_sach_bang_ISBN(const char* isbn) {
     int i;
     for (i = 0; i < tong_so_luong_sach; i++) {

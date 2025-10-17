@@ -19,6 +19,9 @@ void xoa_sach();
 // function cập nhật thông tin sách
 void cap_nhat_sach();
 
+// function tìm sách theo ISBN
+void tim_sach_theo_ISBN();
+
 // function cập nhật số lượng sách còn lại khi cập nhật tổng số lượng sách
 // params: int index của sách
 // return: none

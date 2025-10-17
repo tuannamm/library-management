@@ -41,7 +41,7 @@ static void menu_book() {
         if (c == 2) them_sach();
         if (c == 3) cap_nhat_sach();
         if (c == 4) xoa_sach();
-        if (c == 5) printf("BOOK: option 5");
+        if (c == 5) tim_sach_theo_ISBN();
         if (c == 6) printf("BOOK: option 6");
         if (c == 0) return;
 
