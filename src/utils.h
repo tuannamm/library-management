@@ -3,7 +3,6 @@
 
 #include <stddef.h>
 
-
 // function đọc một số nguyên trong khoảng từ min_val đến max_val từ stdin với prompt và validation
 // params: prompt; min_val, max_val
 // return: số nguyên đọc được
@@ -19,7 +18,32 @@ void nhap_chuoi(const char* promp, char* buf, int max_len);
 // return: none
 void luu_du_lieu_vao_vung_nho(char* dest, const char* source);
 
-// function: Bấm enter to continue, bỏ qua mọi thứ mọi người nhập cho đến khi nhập "enter"
+// function lưu dữ liệu int vào vùng nhớ
+// params: dest - địa chỉ vùng nhớ, value - giá trị int
+// return: none
+void luu_so_nguyen_vao_vung_nho(int* dest, int value);
+
+// function Bấm enter to continue, bỏ qua mọi thứ mọi người nhập cho đến khi nhập "enter"
 void press_enter_to_continue();
+
+// function trả về số ngày trong một tháng của một năm
+// params: month, year
+// return: số ngày trong tháng
+int so_ngay_trong_thang(int thang, int nam);
+
+// function random mã đọc giả
+int random_ma_doc_gia();
+
+int validate_ngay_thang_nam(int ngay, int thang, int nam);
+
+// function nhập ngày tháng năm
+// params: prompt, ngày, tháng, năm
+// return: 
+int nhap_ngay_thang_nam(const char* label, int* ngay, int* thang, int* nam);
+
+// function kiểm tra tháng có phải là năm nhuận không
+// params: int thang
+// return 1 nếu là năm nhuận, return 0 nếu không phải
+int check_nam_nhuan(int nam);
 
 #endif
