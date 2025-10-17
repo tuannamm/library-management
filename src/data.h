@@ -14,6 +14,7 @@
 extern int tong_so_luong_sach;
 
 void khoi_tao_du_lieu();
+void init_sample_data();
 
 char* isbn_sach_at(int i);
 char* tieu_de_sach_at(int i);
