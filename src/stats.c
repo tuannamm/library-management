@@ -3,6 +3,7 @@
 
 #include "stats.h"
 #include "book.data.h"
+#include "reader.data.h"
 
 void thong_ke_sach() {
     long long total = 0;
@@ -11,4 +12,8 @@ void thong_ke_sach() {
         total += g_sach_ban_sao[i];
     }
     printf("Tong so luong sach hien co: %lld\n", total);
+}
+
+void thong_ke_doc_gia() {
+    printf("Tong so luong doc gia hien co: %d\n", tong_so_luong_doc_gia);
 }
