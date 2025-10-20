@@ -6,6 +6,7 @@
 #include "book.data.h"
 #include "reader.h"
 #include "reader.data.h"
+#include "stats.h"
 
 static void menu_quan_ly_doc_gia() {
     while(1) {
@@ -61,7 +62,7 @@ static void menu_stats() {
         printf("0. Quay lai\n");
 
         int c = nhap_so_nguyen("Chon: ", 0, 6);
-        if (c == 1) printf("STATS: option 1");
+        if (c == 1) thong_ke_sach();
         if (c == 2) printf("STATS: option 2");
         if (c == 3) printf("STATS: option 3");
         if (c == 4) printf("STATS: option 4");
