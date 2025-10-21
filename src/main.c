@@ -22,10 +22,10 @@ static void menu_quan_ly_doc_gia() {
         int c = nhap_so_nguyen("Chon: ", 0, 6);
         if (c == 1) get_danh_sach_doc_gia();
         if (c == 2) them_doc_gia();
-        if (c == 3) printf("READER: option 3");
-        if (c == 4) printf("READER: option 4");
-        if (c == 5) printf("READER: option 5");
-        if (c == 6) printf("READER: option 6");
+        if (c == 3) cap_nhat_doc_gia();
+        if (c == 4) xoa_doc_gia_bang_cmnd();
+        if (c == 5) tim_doc_gia_bang_cmnd();
+        if (c == 6) tim_doc_gia_bang_ho_va_ten();
         if (c == 0) return;
     }
 }
