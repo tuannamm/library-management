@@ -101,3 +101,18 @@ int nhap_ngay_thang_nam(const char* label, int* ngay , int* thang, int* nam) {
         }
     }
 }
+
+void tinh_ngay_han_tra_sach(int ngay_muon, int thang_muon, int nam_muon, int *ngay_tra, int *thang_tra, int *nam_tra) {
+    *ngay_tra = ngay_muon;
+    *thang_tra = thang_muon;
+    *nam_tra = nam_muon;
+
+    while (*ngay_tra > so_ngay_trong_thang(thang_muon, nam_muon)) {
+        *ngay_tra -= so_ngay_trong_thang(thang_muon, nam_muon);
+        (*thang_tra)++;
+        if (*thang_tra > 12) {
+            *thang_tra = 1;
+            (*nam_tra)++;
+        }
+    }
+} 
