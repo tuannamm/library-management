@@ -8,6 +8,11 @@
 #include "reader.data.h"
 #include "stats.h"
 
+#include "loan.h"
+#include "loan_return.h"
+#include "loan.data.h"
+
+
 static void menu_quan_ly_doc_gia() {
     while(1) {
         printf("\n=== QUAN LY DOC GIA ===\n");
@@ -89,8 +94,8 @@ int main() {
         int c = nhap_so_nguyen("Chon : ", 0, 5);
         if (c == 1) menu_quan_ly_doc_gia();
         if (c == 2) menu_quan_ly_sach();
-        if (c == 3) printf("Chon option 3\n");        
-        if (c == 4) printf("Chon option 4\n");
+        if (c == 3) lap_phieu_muon_sach();        
+        if (c == 4) lap_phieu_tra_sach();
         if (c == 5) menu_stats();
         if (c == 0) return 0;
 
