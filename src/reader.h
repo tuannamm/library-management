@@ -19,12 +19,10 @@ void tim_doc_gia_bang_cmnd();
 int them_doc_gia();
 
 // function validate mã đọc giả
-int validate_ma_doc_gia();
+int validate_ma_doc_gia(const char* ma_doc_gia);
 
 // function tìm đọc giả được thêm thư viện bằng mã đọc giả
-// params: char* ma_doc_gia
-// return: 0 nếu chưa tồn tại, 1 nếu đã tồn tại
-void tim_doc_gia_bang_ma(const char* ma_doc_gia);
+void tim_doc_gia_bang_ma();
 
 // function tìm index độc giả bằng CMND
 int tim_doc_gia_by_cmnd(const char* cmnd);

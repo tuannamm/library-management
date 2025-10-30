@@ -29,7 +29,7 @@ void get_danh_sach_doc_gia() {
     if (tong_so_luong_doc_gia == 0) printf("Hien tai chua co doc gia trong thu vien.\n\n");
 }
 
-void tim_doc_gia_bang_ma(const char* ma_doc_gia) {
+void tim_doc_gia_bang_ma() {
     char ma_doc_gia[LENGTH_MA_DOC_GIA];
     nhap_chuoi("Nhap ma doc gia can tim: ", ma_doc_gia, LENGTH_MA_DOC_GIA);
     int index_cua_doc_gia = tim_doc_gia_by_ma(ma_doc_gia);
@@ -110,17 +110,6 @@ int tim_doc_gia_by_cmnd(const char* cmnd) {
         }
     }
     return -1;
-}
-
-void tim_doc_gia_bang_cmnd(const char* cmnd) {
-    char cmnd_input[LENGTH_CMND];
-    nhap_chuoi("Nhap CMND can tim: ", cmnd_input, LENGTH_CMND);
-    int index_cua_doc_gia = tim_doc_gia_by_cmnd(cmnd_input);
-    if (index_cua_doc_gia == -1) {
-        printf("Khong tim thay doc gia voi CMND.\n");
-        return;
-    }
-    print_doc_gia_theo_hang(index_cua_doc_gia);
 }
 
 int validate_ma_doc_gia(const char* ma_doc_gia) {
