@@ -2,6 +2,7 @@
 #include <string.h>
 
 #include "utils.h"
+#include <time.h>
 
 int nhap_so_nguyen(const char* prompt, int min_val, int max_val) {
     char line[128];
@@ -115,4 +116,12 @@ void tinh_ngay_han_tra_sach(int ngay_muon, int thang_muon, int nam_muon, int *ng
             (*nam_tra)++;
         }
     }
+}
+
+void lay_ngay_hien_tai(int* ngay, int* thang, int* nam) {
+    time_t now = time(NULL);
+    struct tm* t = localtime(&now);
+    *ngay = t->tm_mday;
+    *thang = t->tm_mon + 1; 
+    *nam = t->tm_year + 1900;
 } 

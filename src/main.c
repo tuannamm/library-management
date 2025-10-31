@@ -71,8 +71,8 @@ static void menu_stats() {
         if (c == 2) thong_ke_sach_theo_the_loai();
         if (c == 3) thong_ke_doc_gia();
         if (c == 4) thong_ke_doc_gia_theo_gioi_tinh();
-        if (c == 5) printf("STATS: option 5");
-        if (c == 6) printf("STATS: option 6");
+        if (c == 5) thong_ke_sach_dang_muon();
+        if (c == 6) danh_sach_doc_gia_tre_han();
         if (c == 0) return;
 }
 

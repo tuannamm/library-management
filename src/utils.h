@@ -48,6 +48,10 @@ int check_nam_nhuan(int nam);
 
 
 // function tính ngày trả sách
+
+// function lấy ngày tháng năm hiện tại
+// params: ngay, thang, nam (output)
+void lay_ngay_hien_tai(int* ngay, int* thang, int* nam);
 // params: int ngay_muon, int thang_muon, int nam_muon,
 // return: none
 void tinh_ngay_han_tra_sach(int ngay_muon, int thang_muon, int nam_muon, int *ngay_tra, int *thang_tra, int *nam_tra); 
