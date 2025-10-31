@@ -4,6 +4,8 @@
         "stddef.h": "c",
         "book.h": "c",
         "reader.h": "c",
-        "stats.h": "c"
+        "stats.h": "c",
+        "test_framework.h": "c",
+        "loan.data.h": "c"
     }
 }

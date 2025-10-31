@@ -68,7 +68,7 @@ static void menu_stats() {
 
         int c = nhap_so_nguyen("Chon: ", 0, 6);
         if (c == 1) thong_ke_sach();
-        if (c == 2) printf("STATS: option 2");
+        if (c == 2) thong_ke_sach_theo_the_loai();
         if (c == 3) thong_ke_doc_gia();
         if (c == 4) thong_ke_doc_gia_theo_gioi_tinh();
         if (c == 5) printf("STATS: option 5");
