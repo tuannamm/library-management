@@ -40,4 +40,14 @@ int tim_sach_bang_ISBN(const char* isbn);
 // return 0 nếu chưa tồn tại, 1 nếu đã tồn tại
 int validate_sach_by_isbn(const char* isbn);
 
+// function tìm sách bằng tiêu đề
+// params: const char* tieu_de
+// return: index của sách hoặc -1 nếu không tìm thấy
+int tim_sach_bang_tieu_de(const char* tieu_de);
+
+// function chọn thể loại sách từ menu
+// params: char* the_loai_output
+// return: none
+void chon_the_loai_sach(char* the_loai_output);
+
 #endif

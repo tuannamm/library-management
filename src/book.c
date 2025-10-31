@@ -53,7 +53,7 @@ int them_sach() {
     nhap_chuoi("Nha xuat ban: ", nha_xuat_ban, LENGTH_NXB);
     int year = nhap_so_nguyen("Nam xuat ban: ", 1, 9999);
     char the_loai[LENGTH_THE_LOAI];
-    nhap_chuoi("The loai: ", the_loai, LENGTH_THE_LOAI);
+    chon_the_loai_sach(the_loai);
     int gia = nhap_so_nguyen("Gia: ", 0, 999999999);
     int so_luong = nhap_so_nguyen("So luong: ", 0, 99999999);
 
@@ -134,7 +134,7 @@ void cap_nhat_sach() {
     }
     if (option == 5) {
         char the_loai_moi[LENGTH_THE_LOAI];
-        nhap_chuoi("The loai moi: ", the_loai_moi, LENGTH_THE_LOAI);
+        chon_the_loai_sach(the_loai_moi);
         luu_du_lieu_vao_vung_nho(the_loai_sach_at(index_cua_sach), the_loai_moi);
     }
     if (option == 6) {
@@ -210,4 +210,58 @@ void cap_nhat_so_luong_sach_co_san(int index) {
 
     int chenh_lech = tong_so_luong_sach_hien_tai - tong_so_luong_sach_co_san_hien_tai;
     g_sach_ban_sao_co_san[index] = chenh_lech;
+}
+
+void chon_the_loai_sach(char* the_loai_output) {
+    printf("\n=== CHON THE LOAI SACH ===\n");
+    printf("1. Programming (Lap trinh)\n");
+    printf("2. Database (Co so du lieu)\n");
+    printf("3. Web Development (Phat trien Web)\n");
+    printf("4. Software Design (Thiet ke phan mem)\n");
+    printf("5. Testing (Kiem thu)\n");
+    printf("6. Networking (Mang may tinh)\n");
+    printf("7. Security (Bao mat)\n");
+    printf("8. AI/Machine Learning (Tri tue nhan tao)\n");
+    printf("9. Mobile Development (Phat trien ung dung di dong)\n");
+    printf("10. Other (Khac)\n");
+    
+    int choice = nhap_so_nguyen("Chon the loai (1-10): ", 1, 10);
+    
+    switch (choice) {
+        case 1:
+            strcpy(the_loai_output, "Programming");
+            break;
+        case 2:
+            strcpy(the_loai_output, "Database");
+            break;
+        case 3:
+            strcpy(the_loai_output, "Web Development");
+            break;
+        case 4:
+            strcpy(the_loai_output, "Software Design");
+            break;
+        case 5:
+            strcpy(the_loai_output, "Testing");
+            break;
+        case 6:
+            strcpy(the_loai_output, "Networking");
+            break;
+        case 7:
+            strcpy(the_loai_output, "Security");
+            break;
+        case 8:
+            strcpy(the_loai_output, "AI/Machine Learning");
+            break;
+        case 9:
+            strcpy(the_loai_output, "Mobile Development");
+            break;
+        case 10:
+            printf("Nhap the loai khac: ");
+            nhap_chuoi("", the_loai_output, LENGTH_THE_LOAI);
+            break;
+        default:
+            strcpy(the_loai_output, "Unknown");
+            break;
+    }
+    printf("Da chon the loai: %s\n", the_loai_output);
 }
