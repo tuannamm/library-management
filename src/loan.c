@@ -9,7 +9,30 @@
 
 void thong_ke_sach_dang_muon() {
     printf("\n=== THONG KE SACH DANG DUOC MUON ===\n\n");
-    printf("Tong so luong sach dang duoc muon: %d\n\n", tong_so_luong_phieu_muon - tong_so_luong_phieu_tra);
+    
+    if (tong_so_luong_phieu_muon == 0) {
+        printf("Khong co phieu muon nao.\n");
+        return;
+    }
+    
+    int tong_sach_dang_muon = 0;
+    
+    // Duyệt qua tất cả phiếu mượn
+    for (int i = 0; i < tong_so_luong_phieu_muon; i++) {
+        int so_sach_muon = g_phieu_muon_so_sach_muon[i];
+        
+        // Duyệt qua từng sách trong phiếu mượn
+        for (int j = 0; j < so_sach_muon; j++) {
+            int idx_status = index_sach_trong_phieu_muon(i, j);
+            
+            // Kiểm tra trạng thái: 0 = chưa trả, 1 = đã trả, 2 = mất sách
+            if (g_phieu_muon_trang_thai_sach[idx_status] == 0) {
+                tong_sach_dang_muon++;
+            }
+        }
+    }
+    
+    printf("Tong so sach dang duoc muon (chua tra): %d\n", tong_sach_dang_muon);
 }
 
 void lap_phieu_muon_sach() {
