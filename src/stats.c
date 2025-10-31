@@ -4,6 +4,10 @@
 #include "stats.h"
 #include "book.data.h"
 #include "reader.data.h"
+#include "loan.h"
+#include "loan.data.h"
+#include "loan_return.h"
+#include "utils.h"
 
 void thong_ke_sach() {
     long long total = 0;
@@ -22,7 +26,7 @@ void thong_ke_doc_gia_theo_gioi_tinh() {
     int tong_nam = 0;
     int tong_nu =0;
     for (int i = 0; i < tong_so_luong_doc_gia; i++) {
-        if (strcmp(g_doc_gia_gioi_tinh[i], "nam") == 0) {
+         if (strcmp(g_doc_gia_gioi_tinh[i], "nam") == 0) {
             tong_nam++;
         } else if (strcmp(g_doc_gia_gioi_tinh[i], "nu") == 0) {
             tong_nu++;
@@ -77,4 +81,75 @@ void thong_ke_sach_theo_the_loai() {
     
     printf("------------------------------------------------------------------\n");
     printf("Tong so the loai co sach: %d\n", tong_the_loai_co_sach);
+}
+
+void danh_sach_doc_gia_tre_han() {
+    printf("\n=== DANH SACH DOC GIA BI TRE HAN ===\n\n");
+    
+    if (tong_so_luong_phieu_muon == 0) {
+        printf("Khong co phieu muon nao.\n");
+        return;
+    }
+    
+    // Lấy ngày hiện tại
+    int ngay_hien_tai, thang_hien_tai, nam_hien_tai;
+    lay_ngay_hien_tai(&ngay_hien_tai, &thang_hien_tai, &nam_hien_tai);
+    
+    printf("Ngay hien tai: %02d/%02d/%d\n\n", ngay_hien_tai, thang_hien_tai, nam_hien_tai);
+    
+    printf("%-20s | %-15s | %-15s | %-15s | %-15s\n", 
+           "HO TEN", "CMND", "NGAY MUON", "HAN TRA", "SO NGAY TRE");
+    printf("-------------------------------------------------------------------------------------\n");
+    
+    int co_doc_gia_tre_han = 0;
+    
+    // Duyệt qua tất cả phiếu mượn
+    for (int i = 0; i < tong_so_luong_phieu_muon; i++) {
+        int so_sach_muon = g_phieu_muon_so_sach_muon[i];
+        int co_sach_chua_tra = 0;
+        
+        // Kiểm tra xem có sách nào chưa trả không
+        for (int j = 0; j < so_sach_muon; j++) {
+            int idx_status = index_sach_trong_phieu_muon(i, j);
+            if (g_phieu_muon_trang_thai_sach[idx_status] == 0) { // chưa trả
+                co_sach_chua_tra = 1;
+                break;
+            }
+        }
+        
+        if (!co_sach_chua_tra) {
+            continue; // Bỏ qua nếu đã trả hết sách
+        }
+        
+        // Tính số ngày chênh lệch giữa ngày hiện tại và ngày trả dự kiến
+        int ngay_tra_du_kien = g_phieu_muon_ngay_tra[i];
+        int thang_tra_du_kien = g_phieu_muon_thang_tra[i];
+        int nam_tra_du_kien = g_phieu_muon_nam_tra[i];
+        
+        int so_ngay_tre = tinh_so_ngay_chenh_lech(
+            ngay_tra_du_kien, thang_tra_du_kien, nam_tra_du_kien,
+            ngay_hien_tai, thang_hien_tai, nam_hien_tai
+        );
+        
+        // Nếu trễ hạn (số ngày > 0)
+        if (so_ngay_tre > 0) {
+            printf("%-20s | %-15s | %02d/%02d/%04d      | %02d/%02d/%04d     | %d ngay\n",
+                   phieu_muon_ho_ten_at(i),
+                   phieu_muon_cmnd_at(i),
+                   g_phieu_muon_ngay_muon[i],
+                   g_phieu_muon_thang_muon[i],
+                   g_phieu_muon_nam_muon[i],
+                   ngay_tra_du_kien,
+                   thang_tra_du_kien,
+                   nam_tra_du_kien,
+                   so_ngay_tre);
+            co_doc_gia_tre_han = 1;
+        }
+    }
+    
+    if (!co_doc_gia_tre_han) {
+        printf("Khong co doc gia nao bi tre han.\n");
+    }
+    
+    printf("-------------------------------------------------------------------------------------\n");
 }
