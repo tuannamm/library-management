@@ -6,6 +6,8 @@
         "reader.h": "c",
         "stats.h": "c",
         "test_framework.h": "c",
-        "loan.data.h": "c"
+        "loan.data.h": "c",
+        "utils.h": "c",
+        "time.h": "c"
     }
 }
